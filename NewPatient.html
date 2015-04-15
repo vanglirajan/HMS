@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html ng-app="HMSApplication">
+
+<head>
+    <title></title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="public/stylesheets/datepicker.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <script src="app.js"></script>
+    <script src="public/javascripts/bootstrap-datepicker.js"></script>
+
+    <style>
+        input.ng-invalid.ng-dirty
+        {
+            border:1px solid red;
+        }
+
+    </style>
+</head>
+<body data-ng-controller="NewPatientController">
+     <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">HMS</a>
+      </div>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="logout"><i class="fa fa-shield"></i> Logout</a></li>
+        <li><a href="MyPatientsList"><i class="fa fa-comment"></i> MyPatients</a></li>
+      </ul>
+    </div>
+  </nav>
+<div class="container">
+  <h2>New Patient</h2>
+  <hr/>
+ 
+  <form role="form" name="patForm"  novalidate>
+    <div class="form-group" novalidate>
+      <label for="usr">Fisrst Name:</label>
+      <input type="text" class="form-control" id="usr" ng-model="patient.firstname" name="firstname" capitalize-first required/>
+        <span style="color:red" ng-show="patForm.firstname.$dirty && patForm.firstname.$error.required">Firstname is required.</span>
+
+    </div>
+    <div class="form-group">
+      <label for="pwd">Last Name:</label>
+      <input type="text" class="form-control" id="emai1l" ng-model="patient.lastname" name="lastname" capitalize-first required>
+	  <span style="color:red" ng-show="patForm.lastname.$dirty && patForm.lastname.$error.required">Lastname is required.</span>
+    </div>
+	  <div class="form-group">
+      <label for="pwd">Phone Number:</label>
+      <input type="text" class="form-control" name="phone" id="e2mail" ng-model="patient.phonenumber" placeholder="DDD-DDD-DDDD" required  ng-pattern='/^([0-9]{3})?[-]?([0-9]{3})[-]?([0-9]{4})$/' />
+	   <span style="color:red" ng-show="patForm.phone.$dirty && patForm.phone.$invalid">
+        <span ng-show="patForm.phone.$error.required">Phone number is required.</span>
+		<span  style="color:red" ng-show="patForm.lastvisit.$error.pattern">Incorrect Format, should be DDD-DDD-DDDD</span>
+       </span>
+	   
+    </div>
+	  <div class="form-group">
+      <label for="pwd">Last Visit Date:</label>
+      <input class="form-control " id="em3ail" ng-model="patient.lastVisitDate" type="date" name="lastvisit"  placeholder="YYYY/MM/DD" required	 ng-pattern='/^(\d{4})/(\d{2})/(\d{2})$/'
+	  />
+         <span  style="color:red" ng-show="patForm.lastvisit.$error.pattern">Incorrect Format, should be YYYY/MM/DD</span>
+		
+    </div>
+	  <div class="form-group">
+      <label for="pwd">Status:</label>
+	   <input type="checkbox" ng-model="patient.status"/>
+    </div>
+	
+	
+	<button ng-disabled="patForm.$invalid" class="btn btn-success" data-ng-click="AddPatient()">Add Patient</button>
+  </form>
+</div>
+    </body></html>

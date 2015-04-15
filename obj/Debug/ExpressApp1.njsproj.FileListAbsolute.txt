@@ -1,0 +1,4 @@
+C:\Users\Dell\Downloads\ExpressApp1\obj\Debug\ExpressApp1.njsprojResolveAssemblyReference.cache
+C:\Users\Dell\Downloads\ExpressApp1\bin\Microsoft.NodejsTools.WebRole.dll
+E:\EmergingTechnologies\Hossain\ExpressApp1\obj\Debug\ExpressApp1.njsprojResolveAssemblyReference.cache
+E:\EmergingTechnologies\Hossain\ExpressApp1\bin\Microsoft.NodejsTools.WebRole.dll

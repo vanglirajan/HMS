@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html ng-app="HMSApplication">
+
+<head>
+    <title></title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="public/stylesheets/datepicker.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <script src="app.js"></script>
+    <script src="public/javascripts/bootstrap-datepicker.js"></script>
+    <style>
+	
+body {
+	background: #eee !important;	
+}
+
+.wrapper {	
+	margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+        .form-signin
+        {
+            max-width: 380px;
+            padding: 15px 35px 45px;
+            margin: 0 auto;
+            background-color: #fff;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+
+  .form-signin-heading,.checkbox {
+	  margin-bottom: 30px;
+	}
+
+	.checkbox {
+	  font-weight: normal;
+	}
+
+	
+
+	input[type="text"] {
+	  margin-bottom: -1px;
+	  border-bottom-left-radius: 0;
+	  border-bottom-right-radius: 0;
+	}
+
+	input[type="password"] {
+	  margin-bottom: 20px;
+	  border-top-left-radius: 0;
+	  border-top-right-radius: 0;
+	}
+
+
+	
+	</style>
+
+</head>
+
+    <body>
+	
+   <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">HMS</a>
+      </div>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="login"><i class="fa fa-shield"></i> Login</a></li>
+        <li><a href="AllPatientsList"><i class="fa fa-comment"></i> View Patients</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+ <div ng-controller="IndexController">
+ 
+   <div class="wrapper">
+   <form id="loginForm" method="POST" action="/doctorlogin" novalidate="novalidate" style="max-width: 380px;padding: 15px 35px 45px;margin: 0 auto;background-color: #fff;border: 1px solid rgba(0,0,0,0.1);">   
+      <h2 class="form-signin-heading">Doctor</h2>
+
+      <input type="text" class="form-control" style="position: relative;font-size: 16px;height: auto;padding: 10px;" id="username" name="username" value="" required="" title="Please enter you username" placeholder="example@gmail.com">
+      <input type="password" class="form-control" style="position: relative;font-size: 16px;height: auto;padding: 10px;margin-top: 29px" id="password" name="password" value="" required="" title="Please enter your password" placeholder="password">   
+      <label class="checkbox">
+      
+      </label>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>   
+    </form>
+  </div>
+  
+
+     </body>
+    </html>

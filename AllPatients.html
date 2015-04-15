@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html ng-app="HMSApplication">
+
+<head>
+    <title></title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="public/stylesheets/datepicker.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <script src="app.js"></script>
+    <script src="public/javascripts/bootstrap-datepicker.js"></script>
+
+
+</head>
+<body>
+    <div data-ng-controller="AllPatientsController">
+      
+
+   <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">HMS</a>
+      </div>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="login"><i class="fa fa-shield"></i> Login</a></li>
+        <li><a href="AllPatientsList"><i class="fa fa-comment"></i> View Patients</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+        <h2 style="position: absolute; top: 161px; left: 55px;">Patient list  </h2>
+        <hr /><br />
+         <div class="form-group" style="float: right;">
+              <input type="text"  id="Text1" ng-model="firstname" name="firstname"/>
+              <button class="btn btn-danger" data-ng-click="SearchPatient(firstname)">Search Patient</button>
+			  
+			   <input type="text"  id="Text1" ng-model="drname" name="drname"/>
+              <button class="btn btn-info" data-ng-click="SearchDoctor(drname)">Search Doctor</button>
+        </div>
+
+      
+
+        <table class="table" style="position: absolute; top: 247px; left: 55px;">
+            <tr>
+
+                <th>firstname</th>
+                <th>lastname</th>
+                <th>phonenumber</th>
+                <th>lastVisitDate</th>
+                <th>status</th>
+                <th>Doctor</th>
+            </tr>
+
+            <tr ng-repeat="patt in patient ">
+
+                <td>{{patt.firstname}}</td>
+                <td>{{patt.lastname}}</td>
+                <td>{{patt.phonenumber}}</td>
+                <td>{{patt.lastVisitDate}}</td>
+                <td>{{ patt.status && 'Active' || 'Inactive' }} </td>
+                <td>{{patt.doctorName}}</td>
+              
+            </tr>
+        </table>
+
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

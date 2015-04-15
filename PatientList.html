@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html ng-app="HMSApplication">
+
+<head>
+    <title></title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="public/stylesheets/datepicker.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <script src="app.js"></script>
+    <script src="public/javascripts/bootstrap-datepicker.js"></script>
+
+
+</head>
+<body>
+    <div data-ng-controller="PatientListController">
+
+         <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">HMS</a>
+      </div>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="logout"><i class="fa fa-shield"></i> Logout</a></li>
+        <li><a href="MyPatientsList"><i class="fa fa-comment"></i> MyPatients</a></li>
+      </ul>
+    </div>
+  </nav>
+        <h2 style="position: absolute; top: 161px; left: 55px;">Patient list  <a href="NewPatient" class="btn btn-info">New Patient</a> </h2>
+        <table class="table" style="position: absolute; top: 247px; left: 55px;">
+            <tr>
+
+                <th>firstname</th>
+                <th>lastname</th>
+                <th>phonenumber</th>
+                <th>lastVisitDate</th>
+                <th>status</th>
+                <th>View </th>
+				 <th>Delete</th>
+            </tr>
+
+            <tr ng-repeat="patt in patient ">
+
+                <td>{{patt.firstname}}</td>
+                <td>{{patt.lastname}}</td>
+                <td>{{patt.phonenumber}}</td>
+                <td>{{patt.lastVisitDate}}</td>
+                <td>{{ patt.status && 'Active' || 'Inactive' }} </td>
+                <td><a ng-href="PatientDetails?id={{patt._id}}" class="btn btn-warning">View</a>
+                <td><button  class="btn btn-warning" data-ng-click="DeletePatient(patt._id)" > Delete</button></td>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

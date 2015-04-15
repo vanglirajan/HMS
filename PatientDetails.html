@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html ng-app="HMSApplication">
+
+<head>
+    <title></title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="public/stylesheets/datepicker.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <script src="app.js"></script>
+    <script src="public/javascripts/bootstrap-datepicker.js"></script>
+
+
+</head>
+<body data-ng-controller="PatientDetailsController">
+ <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">HMS</a>
+      </div>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="logout"><i class="fa fa-shield"></i> Logout</a></li>
+        <li><a href="MyPatientsList"><i class="fa fa-comment"></i> MyPatients</a></li>
+      </ul>
+    </div>
+  </nav>
+ <div>
+     <h2 style="position: absolute; top: 161px; left: 55px;">Patient Detail</h2>
+
+
+   <div ng-hide="InfoPanel" style="position: absolute;top: 244px;left: 68px;">
+    <div class="form-group">
+      <label for="usr">Fisrst Name:</label>
+	  <label for="usr">{{pat.firstname}}</label>
+     
+    </div>
+    <div class="form-group">
+      <label for="pwd">Last Name:</label>
+	   <label for="usr">{{pat.lastname}}</label>
+    </div>
+	  <div class="form-group">
+      <label for="pwd">Phone Number:</label>
+	  <label for="usr">{{pat.phonenumber}}</label>
+    
+    </div>
+	  <div class="form-group">
+      <label for="pwd">Last Visit Date:</label>
+       <label for="usr">{{pat.lastVisitDate}}</label>
+    </div>
+	  <div class="form-group">
+      <label for="pwd">Status:</label>
+	  {{ pat.status && 'Active' || 'Inactive' }}
+	
+    </div>
+	<button class="btn btn-info" ng-click="updatePatientTrigger()"> Update</button> 
+  </div>
+  
+<div ng-hide="EditPanel" style="position: absolute;top: 244px;left: 68px;">
+    <div class="form-group">
+      <label for="usr">Fisrst Name:</label>
+      <input type="text" class="form-control" id="usr" ng-model="pat.firstname" required>
+    </div>
+    <div class="form-group">
+      <label for="pwd">Last Name:</label>
+      <input type="text" class="form-control" id="emai1l" ng-model="pat.lastname" required>
+    </div>
+	  <div class="form-group">
+      <label for="pwd">Phone Number:</label>
+      <input type="text" class="form-control" id="e2mail" ng-model="pat.phonenumber" required>
+    </div>
+	  <div class="form-group">
+      <label for="pwd">Last Visit Date:</label>
+      <input class="form-control " id="em3ail" ng-model="pat.lastVisitDate" type="date"  placeholder="yyyy-MM-dd" required>
+	  <span class="error" ng-show="myForm.input.$error.date">
+       Not a valid date!</span>
+    </div>
+	  <div class="form-group">
+      <label for="pwd">Status:</label>
+	   <input type="checkbox" ng-model="pat.status">
+    </div>
+	
+	<button class="btn btn-info" ng-click="updatePatient()"> Save</button> 
+	<button class="btn btn-warning" ng-click="reset()"> Clear</button> 
+  </div>
+
+   
+ 
+</div>
+
+</body>
+    </html>
